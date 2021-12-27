@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse('Home page')
+    return render(request,'home.html')
 
-def index(reques):
-    return HttpResponse('This is index page')
+def index(request):
+    return render(request,'index.html')
