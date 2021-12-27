@@ -20,6 +20,25 @@ def home(request):
 def index(request,pk):
     objectt = objectss.objects.all()
     print(type(objectt))
-    context = {'obj':objectt[int(pk)-1]}
+    # context = {'obj':objectt[int(pk)-1]}
     # context = {'obj':objects[int(pk)-1]}
+    x = objectss.objects.get(id=pk)
+    print(x.name)
+    context = {'obj':x}
     return render(request,'base/index.html',context)
+
+
+def forms(request):
+    context = {
+        'titles ': 'Forms'
+    }
+    return render(request,'base/forms.html',context)
+
+def save(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        description = request.POST.get('description')
+        data = objectss(name=name,description=description)
+        data.save()
+
+    return render(request,'base/forms.html')
