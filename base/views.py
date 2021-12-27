@@ -3,8 +3,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+objects = ['people','animals','world','aliens']
+
+
 def home(request):
-    return render(request,'home.html')
+    context = {'obj':objects}
+    return render(request,'base/home.html',context)
 
 def index(request):
-    return render(request,'index.html')
+    return render(request,'base/index.html')

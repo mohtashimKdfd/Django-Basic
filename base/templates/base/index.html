@@ -7,10 +7,16 @@
     <title>Index Page</title>
 </head>
 <body>
-    {% include 'nav.html'%}
+    {% extends 'main.html'%}
+
+    {% block content %}
+
     <h1>
         Hy guys! This is the index page...............
     </h1>
+
+    {% endblock content %}
+
 
 </body>
 </html>
