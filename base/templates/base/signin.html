@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block title %}
+
+{{ titles }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>
+    Login Page
+</h1>
+
+<form action="{%url 'authenticate'%}" method="POST">
+
+    {% csrf_token %}
+
+
+    <input type="text" name="name" placeholder="Enter your name" width="10em">
+    <input type="password" name="password" placeholder="Enter your password" width="10em">
+
+    <button type="submit">Login</button>
+
+</form>
+
+
+{% endblock %}
+
